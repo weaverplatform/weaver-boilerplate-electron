@@ -1,0 +1,120 @@
+@import 'variables';
+
+.titlebar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 40px;
+	width: 100vw;
+	z-index: 999;
+	-webkit-app-region: drag;
+}
+
+.table {
+	tbody {
+		td {
+			vertical-align: middle;
+		}
+	}
+}
+
+.current-project {
+	position: fixed;
+	bottom: -41px;
+	left: 200px;
+	padding: 10px;
+	background-color: $color-primary;
+	width: 100%;
+	transition: .3s;
+	&.active {
+		bottom: 0px;
+	}
+}
+
+.menu {
+	background: #eee;
+	border-right: 1px solid $color-menu-divider;
+	position: fixed;
+	left: 0;
+	width: 200px;
+	height: 100vh;
+	ul {
+		li {
+			a {
+				text-transform: uppercase;
+				padding: 20px 0px;
+				text-align: center;
+				display: block;
+				border-bottom: 1px solid $color-menu-divider;
+				transition: .2s;
+				font-weight: bold;
+				&:hover {
+					background-color: $color-primary;
+					border-bottom-color: $color-primary;
+					color: #FFF;
+				}
+				&:active {
+					background-color: $color-primary-dark;
+					border-bottom-color: $color-primary-dark;
+					color: #FFF;
+				}
+				&.disabled {
+					color: #888;
+					background-color: $color-menu-disabled;
+					pointer-events: none;
+				}
+			}
+			&.active {
+				a {
+					background-color: $color-primary-dark;
+					border-bottom-color: $color-primary-dark;
+					color: #FFF;
+				}
+			}
+		}
+	}
+
+	.brand {
+		height: 120px;
+		padding: 0px 20px;
+		transition: .3s;
+		&:hover {
+			padding: 0px 10px;
+		}
+		.img {
+			background: url('../src/img/weaver.png') center;
+			background-repeat: no-repeat;
+			background-size: contain;
+			height: inherit;
+		}
+	}
+}
+
+.hero-body {
+	&.static-padding {
+		padding: 3rem 1.5rem !important;
+	}
+}
+
+.is-unselectable.default {
+	cursor: default;
+}
+
+.content-body {
+	margin-left: 200px;
+	display: block;
+}
+
+.notification-container {
+	padding: 0px 20px;
+	z-index: 999;
+	position: absolute;
+	right: 0;
+	top: 140px;
+	width: 300px;
+
+	.notification {
+		opacity: 0.8;
+		box-shadow: 0px 2px 3px #888;
+	}
+}

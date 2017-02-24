@@ -1,0 +1,29 @@
+{
+  "name": "weaver-boilerplate-electron",
+  "description": "Boilerplate for the weaverplatform using electron",
+  "main": "index.js",
+  "authors": [
+    "Michiel Mooring"
+  ],
+  "license": "GPL-3.0",
+  "keywords": [
+    "electron",
+    "weaver",
+    "boilerplate"
+  ],
+  "homepage": "http://weaverplatform.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "weaver-sdk": "develop",
+    "bulma": "^0.3.1",
+    "bluebird": "^3.4.7",
+    "socket.io": "^1.7.3"
+  }
+}

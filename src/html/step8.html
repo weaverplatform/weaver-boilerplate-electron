@@ -1,0 +1,22 @@
+<div class="section">
+	<div class="container">
+		<h1 class="title">Step ∞</h1>
+		<h2 class="subtitle">Check out what you did</h2>
+		<div class="box">
+			<div class="media-content">
+				<p>Query the current project database here. This instance is running Virtuoso, so you should use Sparql syntax.</p>
+				<div class="control">
+					<textarea class="textarea" id="query-field">SELECT * WHERE
+    { ?s ?p ?o }</textarea>
+				</div>
+				<button class="button is-primary is-fullwidth" id="btn-run-query">Run query</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="section">
+	<div class="container has-text-centered">
+		<h1 class="title">I've made a mess...</h1>
+		<a class="button is-primary is-large" id="btn-wipe">Wipe the database</a>
+	</div>
+</div>

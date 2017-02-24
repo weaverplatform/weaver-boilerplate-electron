@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Weaver Electron Boilerplate</title>
+		<link rel="stylesheet" href="styles/vendor.css"/>
+		<link rel="stylesheet" href="styles/app.css"/>
+	</head>
+	<body>
+		<div class="titlebar"></div>
+		<div class="current-project">
+			<strong>Current project: </strong> <span id="current-project"></span>
+		</div>
+		<section class="hero is-primary is-unselectable default">
+			<div class="hero-body static-padding">
+				<h1 class="title">Weaver boilerplate</h1>
+			</div>
+		</section>
+		<div class="menu">
+			<ul class="is-unselectable" id="menu">
+				<li class="active"><a id="step-1" data-step="1">Step 1</a></li>
+				<li><a id="step-2" class="disabled" data-step="2">Step 2</a></li>
+				<li><a id="step-3" class="disabled" data-step="3">Step 3</a></li>
+				<li><a id="step-4" class="disabled" data-step="4">Step 4</a></li>
+				<li><a id="step-5" class="disabled" data-step="5">Step 5</a></li>
+				<li><a id="step-6" class="disabled" data-step="6">Step 6</a></li>
+				<li><a id="step-7" class="disabled" data-step="7">Step 7</a></li>
+				<li><a id="step-8" class="disabled" data-step="8">Step 8</a></li>
+			</ul>
+			<div class="brand is-unselectable default">
+				<div class="img"></div>
+			</div>
+		</div>
+		<div class="notification-container"></div>
+		<div class="content-body" id="content"></div>
+	</body>
+	<script>window.$ = window.jQuery = require('./jquery/jquery-3.1.1.min.js');</script>
+	<script src="scripts/vendor.js"></script>
+	<script src="scripts/app.js"></script>
+</html>
