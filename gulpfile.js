@@ -11,18 +11,25 @@ var browserify 		= require('gulp-browserify');
 var flatten 		= require('gulp-flatten');
 var sass 			= require('gulp-sass');
 var mainBowerFiles 	= require('gulp-main-bower-files');
+browserify 			= require('gulp-browserify');
 
-gulp.task('default', function() {
-
-});
+gulp.task('default', ['vendor', 'app']);
 
 gulp.task('app', function() {
 
         var filters = {
                 "css": filter('**/*.css', {restore: true}),
-                "sass": filter('**/*.scss', {restore: true}),
-                "js": filter('**/*.js', {restore: true})
+                "sass": filter('**/*.scss', {restore: true})
         }
+
+		gulp.src('./src/scripts/main.js')
+			.pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
+			.pipe(browserify({
+				insertGlobals: true
+			}))
+			.pipe(concat('app.js'))
+			.pipe(uglify())
+			.pipe(gulp.dest('./scripts/'))
 
         return gulp.src('./src/**/*')
                 .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
@@ -33,13 +40,7 @@ gulp.task('app', function() {
                 .pipe(concat('app.css'))
                 .pipe(cleanCSS())
                 .pipe(gulp.dest('./styles'))
-                .pipe(filters.css.restore)
-
-                .pipe(filters.js)
-                .pipe(concat('app.js'))
-                .pipe(uglify())
-                .pipe(gulp.dest('./scripts'))
-                .pipe(filters.js.restore);
+                .pipe(filters.css.restore);
 });
 
 gulp.task('vendor', function() {

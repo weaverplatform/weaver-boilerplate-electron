@@ -101,8 +101,12 @@
 }
 
 .content-body {
-	margin-left: 200px;
-	display: block;
+	position: absolute;
+	overflow-y: auto;
+	top: 115px;
+	left: 200px;
+	right: 0px;
+	bottom: 40px;
 }
 
 .notification-container {

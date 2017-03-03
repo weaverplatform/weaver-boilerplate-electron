@@ -5,6 +5,7 @@
 ```
 $ npm install
 $ bower install
+$ gulp
 ```
 
 ### Run
